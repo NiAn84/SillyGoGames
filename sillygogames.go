@@ -110,7 +110,7 @@ func guessnumber() {
 			} else if thenumber >= 8 {
 				fmt.Println("The number is 8 or higher")
 			} else {
-				fmt.Println("The number is equal to, or somewhere between 4 and 8")
+				fmt.Println("The number is equal to, or somewhere between 4 and 7")
 			}
 		}
 	}
