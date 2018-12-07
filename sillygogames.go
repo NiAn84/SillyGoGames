@@ -99,7 +99,7 @@ func guessnumber() {
 
 func dicerules() {
 	fmt.Println("\nYou get 1 point if the dice ends up at 6.")
-	fmt.Println("But if you end up at 1, I get a point.")
+	fmt.Println("But if it end up at 1, I get a point.")
 }
 
 func dice() {
