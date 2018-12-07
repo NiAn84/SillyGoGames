@@ -167,28 +167,28 @@ func main() {
 	for {
 		var choice int8
 		fmt.Println("\n##### Main Menu #####\n")
-		fmt.Println("1: Flip coin")
-		fmt.Println("2: Guess the number")
-		fmt.Println("3: Toss 1 dice")
-		fmt.Println("4: Toss 2 dices")
+		fmt.Println("1: Toss 1 dice")
+		fmt.Println("2: Toss 2 dices")
+		fmt.Println("3: Flip coin")
+		fmt.Println("4: Guess the number")
 		fmt.Println("5: Show current score")
 		fmt.Println("6: Exit")
 		fmt.Print("\nChoice: ")
 		fmt.Scanln(&choice)
 		switch choice {
 		case 1:
-			coinflip()
+			dicerules()
+			dice()
+			score()
 		case 2:
-			guessnumber()
+			dicerules()
+			dice()
+			dice()
+			score()
 		case 3:
-			dicerules()
-			dice()
-			score()
+			coinflip()
 		case 4:
-			dicerules()
-			dice()
-			dice()
-			score()
+			guessnumber()
 		case 5:
 			score()
 		case 6:
