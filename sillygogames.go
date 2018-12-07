@@ -70,7 +70,7 @@ func guessnumber() {
 
 	fmt.Println("\nI'm thinking of a number between 1 and 10.")
 	fmt.Println("Can you guess which one? You get 3 attempts.")
-	fmt.Println("If you get it right, you get a point.")
+	fmt.Println("If you get it right, you get as many points as you have attempts left")
 	fmt.Println("If you get it wrong, I get a point")
 
 	for {
@@ -84,7 +84,9 @@ func guessnumber() {
 			fmt.Println("\nNope, the number is something else.")
 		}
 		if guess == thenumber {
-			humanwin++
+			for i := 1; i <= attempts; i++ {
+				humanwin++
+			}
 			fmt.Println("\nCongratulations you guessed the right number!")
 			break
 		}
@@ -92,6 +94,24 @@ func guessnumber() {
 			computerwin++
 			fmt.Println("\nYou guessed wrong 3 times, the number I was thinking of was", thenumber)
 			break
+		}
+		if attempts == 2 {
+			fmt.Println("You didn't get it right on the first attempt, here you get a clue:")
+			if thenumber <= 5 {
+				fmt.Println("The number is 5 or lower")
+			} else {
+				fmt.Println("The number is 6 or higher")
+			}
+		}
+		if attempts == 1 {
+			fmt.Println("Now you only have 1 attempt left, here is another clue:")
+			if thenumber <= 3 {
+				fmt.Println("The number is 3 or lower")
+			} else if thenumber >= 8 {
+				fmt.Println("The number is 8 or higher")
+			} else {
+				fmt.Println("The number is equal to, or somewhere between 4 and 8")
+			}
 		}
 	}
 	score()
