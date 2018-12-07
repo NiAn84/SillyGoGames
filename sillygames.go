@@ -18,10 +18,10 @@ func coinflip() {
 	rand.Seed(time.Now().UnixNano())
 	coinflip := 1 + rand.Intn(3)
 
-	fmt.Println("\nYou have to choose Heads or Tails,")
+	fmt.Println("You have to choose Heads or Tails,")
 	fmt.Println("when you are done I will flip the coin.")
-	fmt.Println("If you get it right, you get a point.")
-	fmt.Println("If you get it wrong, I get a point\n")
+	fmt.Println("If you get it right, you get a point,")
+	fmt.Println("if you get it wrong, I get a poing")
 
 	for {
 		// fmt.Println(coinflip) // Remove comment for testing purposes only
@@ -70,8 +70,6 @@ func guessnumber() {
 
 	fmt.Println("\nI'm thinking of a number between 1 and 10.")
 	fmt.Println("Can you guess which one? You get 3 attempts.")
-	fmt.Println("If you get it right, you get a point.")
-	fmt.Println("If you get it wrong, I get a point")
 
 	for {
 		if attempts > 0 && guess != thenumber {
@@ -90,7 +88,7 @@ func guessnumber() {
 		}
 		if attempts < 1 {
 			computerwin++
-			fmt.Println("\nYou guessed wrong 3 times, the number I was thinking of was", thenumber)
+			fmt.Println("\nYou guessed wrong 3 times, the number I was thinking on was", thenumber)
 			break
 		}
 	}
