@@ -9,8 +9,8 @@ import (
 	"time"
 )
 
-var humanwin int
-var computerwin int
+var humanscore int
+var computerscore int
 
 func coinflip() {
 	var choice int
@@ -49,13 +49,13 @@ func coinflip() {
 	}
 
 	if coinflip == choice {
-		humanwin++
+		humanscore++
 		fmt.Println("You won!")
 		score()
 	} else if coinflip == 3 {
 		fmt.Println("Oooops!\nSorry, but I lost the coin")
 	} else {
-		computerwin++
+		computerscore++
 		fmt.Println("You lost.")
 		score()
 	}
@@ -85,13 +85,13 @@ func guessnumber() {
 		}
 		if guess == thenumber {
 			for i := 1; i <= attempts; i++ {
-				humanwin++
+				humanscore++
 			}
 			fmt.Println("\nCongratulations you guessed the right number!")
 			break
 		}
 		if attempts < 1 {
-			computerwin++
+			computerscore++
 			fmt.Println("\nYou guessed wrong 3 times, the number I was thinking of was", thenumber)
 			break
 		}
@@ -128,7 +128,7 @@ func dice() {
 	fmt.Println("\n---------")
 	switch dice {
 	case 1:
-		computerwin++
+		computerscore++
 		fmt.Println("|       |")
 		fmt.Println("|   o   |")
 		fmt.Println("|       |")
@@ -149,7 +149,7 @@ func dice() {
 		fmt.Println("|   o   |")
 		fmt.Println("| o   o |")
 	case 6:
-		humanwin++
+		humanscore++
 		for i := 1; i <= 3; i++ {
 			fmt.Println("| o   o |")
 		}
@@ -159,8 +159,8 @@ func dice() {
 
 func score() {
 	fmt.Println("\n### Score ###")
-	fmt.Println("Human:   ", humanwin)
-	fmt.Println("Computer:", computerwin)
+	fmt.Println("Human:   ", humanscore)
+	fmt.Println("Computer:", computerscore)
 }
 
 func main() {
