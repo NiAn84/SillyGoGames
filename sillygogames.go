@@ -12,6 +12,46 @@ import (
 var humanscore int
 var computerscore int
 
+func dicerules() {
+	fmt.Println("\nYou get 1 point if the dice ends up at 6.")
+	fmt.Println("But if it end up at 1, I get a point.")
+}
+
+func dice() {
+	rand.Seed(time.Now().UnixNano())
+	dice := 1 + rand.Intn(6)
+	fmt.Println("\n---------")
+	switch dice {
+	case 1:
+		computerscore++
+		fmt.Println("|       |")
+		fmt.Println("|   o   |")
+		fmt.Println("|       |")
+	case 2:
+		fmt.Println("| o     |")
+		fmt.Println("|       |")
+		fmt.Println("|     o |")
+	case 3:
+		fmt.Println("| o     |")
+		fmt.Println("|   o   |")
+		fmt.Println("|     o |")
+	case 4:
+		fmt.Println("| o   o |")
+		fmt.Println("|       |")
+		fmt.Println("| o   o |")
+	case 5:
+		fmt.Println("| o   o |")
+		fmt.Println("|   o   |")
+		fmt.Println("| o   o |")
+	case 6:
+		humanscore++
+		for i := 1; i <= 3; i++ {
+			fmt.Println("| o   o |")
+		}
+	}
+	fmt.Println("---------")
+}
+
 func coinflip() {
 	var choice int
 
@@ -115,46 +155,6 @@ func guessnumber() {
 		}
 	}
 	score()
-}
-
-func dicerules() {
-	fmt.Println("\nYou get 1 point if the dice ends up at 6.")
-	fmt.Println("But if it end up at 1, I get a point.")
-}
-
-func dice() {
-	rand.Seed(time.Now().UnixNano())
-	dice := 1 + rand.Intn(6)
-	fmt.Println("\n---------")
-	switch dice {
-	case 1:
-		computerscore++
-		fmt.Println("|       |")
-		fmt.Println("|   o   |")
-		fmt.Println("|       |")
-	case 2:
-		fmt.Println("| o     |")
-		fmt.Println("|       |")
-		fmt.Println("|     o |")
-	case 3:
-		fmt.Println("| o     |")
-		fmt.Println("|   o   |")
-		fmt.Println("|     o |")
-	case 4:
-		fmt.Println("| o   o |")
-		fmt.Println("|       |")
-		fmt.Println("| o   o |")
-	case 5:
-		fmt.Println("| o   o |")
-		fmt.Println("|   o   |")
-		fmt.Println("| o   o |")
-	case 6:
-		humanscore++
-		for i := 1; i <= 3; i++ {
-			fmt.Println("| o   o |")
-		}
-	}
-	fmt.Println("---------")
 }
 
 func score() {
